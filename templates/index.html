@@ -37,6 +37,16 @@
         <label>Porque você deveria adotar um animal abandonado ao invés de comprar um de raça</label><br>
         <br>
         <button type="submit">Enviar</button>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
     </form>
 </body>
 </html>
