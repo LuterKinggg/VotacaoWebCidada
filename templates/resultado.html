@@ -19,7 +19,7 @@
     <body>
       <div class="container">
         {% for key, value in votes.items() %}
-          {{ key }}: {{ (value / count * 100)|round(2)}}%<br>
+          <p>{{ key }}: {{ (value / count * 100)|round(2)}}%</p>
         {% endfor %}
       </div>
     </body>
