@@ -12,20 +12,20 @@
   <main>
     <body>
       <div class="container">
-        <p>O Mundo Sombrio de Sabrina: {{ votes[0] }}</p>
-        <p>O Mundo dos Animais: {{ votes[1] }}</p>
-        <p>Hidrate seu Pet: {{ votes[2] }}</p>
-        <p>Animais em Extinção: {{ votes[3] }}</p>
-        <p>Espécies de Peixes: {{ votes[4] }}</p>
-        <p>Gato Minhoso: {{ votes[5] }}</p>
-        <p>DivertidaMentes de uma Bailarina: {{ votes[6] }}</p>
-        <p>Espécies de Gatos: {{ votes[7] }}</p>
-        <p>Previsão do tempo no Litoral Leste, no Agreste e no Vale do Assú: {{votes[8] }}</p>
-        <p>Lingua Brasileira de Sinais (Libras): {{ votes[9] }}</p>
-        <p>Lei aprovada em SP: {{ votes[10] }}</p>
-        <p>Gravidez silenciosa: {{ votes[11] }}</p>
-        <p>O Pequeno Príncipe: {{ votes[12] }}</p>
-        <p>Porque você deveria adotar um animal: {{ votes[13] }}</p>
+        <p>O Mundo Sombrio de Sabrina: {{ (votes[0] / count * 100)|round(2) }}%</p>
+        <p>O Mundo dos Animais: {{ (votes[1] / count * 100)|round(2) }}%</p>
+        <p>Hidrate seu Pet: {{ (votes[2] / count * 100)|round(2) }}%</p>
+        <p>Animais em Extinção: {{ (votes[3] / count * 100)|round(2) }}%</p>
+        <p>Espécies de Peixes: {{ (votes[4] / count * 100)|round(2) }}%</p>
+        <p>Gato Minhoso: {{ (votes[5] / count * 100)|round(2) }}%</p>
+        <p>DivertidaMentes de uma Bailarina: {{ (votes[6] / count * 100)|round(2) }}%</p>
+        <p>Espécies de Gatos: {{ (votes[7] / count * 100)|round(2) }}%</p>
+        <p>Previsão do tempo no Litoral Leste, no Agreste e no Vale do Assú: {{ (votes[8] / count * 100)|round(2) }}%</p>
+        <p>Lingua Brasileira de Sinais (Libras): {{ (votes[9] / count * 100)|round(2) }}%</p>
+        <p>Lei aprovada em SP: {{ (votes[10] / count * 100)|round(2) }}%</p>
+        <p>Gravidez silenciosa: {{ (votes[11] / count * 100)|round(2) }}%</p>
+        <p>O Pequeno Príncipe: {{ (votes[12] / count * 100)|round(2) }}%</p>
+        <p>Porque você deveria adotar um animal: {{ (votes[13] / count * 100)|round(2) }}%</p>
       </div>
     </body>
   </main>
