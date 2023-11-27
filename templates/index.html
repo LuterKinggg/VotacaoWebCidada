@@ -1,42 +1,106 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='index.css') }}" />
+    <link rel="stylesheet" href="temp.css" />
     <title>Votação</title>
-</head>
-<body>
-    <form action="/voto" method="post">
-        <input type="radio" name="option" value="0">
-        <label>O Mundo Sombrio de Sabrina</label><br>
-        <input type="radio" name="option" value="1">
-        <label>O Mundo dos Animais</label><br>
-        <input type="radio" name="option" value="2">
-        <label>Hidrate seu pet</label><br>
-        <input type="radio" name="option" value="3">
-        <label>Animais em Extinção</label><br>
-        <input type="radio" name="option" value="4">
-        <label>Espécie de Peixe</label><br>
-        <input type="radio" name="option" value="5">
-        <label>Gato Minhoso</label><br>
-        <input type="radio" name="option" value="6">
-        <label>DivertidaMentes de uma Bailarina</label><br>
-        <input type="radio" name="option" value="7">
-        <label>Espécies de Gatos</label><br>
-        <input type="radio" name="option" value="8">
-        <label>Previsão é de céu predominante parcialmente nublado e claro no Litoral Leste, no Agreste e no Vale do Assú</label><br>
-        <input type="radio" name="option" value="9">
-        <label>Lingua Brasileira de Sinais (Libras)</label><br>
-        <input type="radio" name="option" value="10">
-        <label>Lei aprovada em SP garante avaliação individualizada para alunos autistas e outros transtornos de desenvolvimento</label><br>
-        <input type="radio" name="option" value="11">
-        <label>'Gravidez silenciosa': entenda em 3 pontos como mulheres só descobrem que serão mães na hora do parto</label><br>
-        <input type="radio" name="option" value="12">
-        <label>O Pequeno Príncipe</label><br>
-        <input type="radio" name="option" value="13">
-        <label>Porque você deveria adotar um animal abandonado ao invés de comprar um de raça</label><br>
-        <br>
-        <button type="submit">Enviar</button>
-    </form>
-</body>
+  </head>
+  <main>
+    <body>
+      <div class="container">
+        <form action="/voto" method="post">
+          <label>
+            <input type="radio" name="option" value="0" />
+            <span>O Mundo Sombrio de Sabrina</span>
+          </label>
+          <label>
+            <input type="radio" name="option" value="1" />
+            <span>O Mundo dos Animais</span>
+          </label>
+          <label>
+            <input type="radio" name="option" value="2" />
+            <span>Hidrate seu Pet</span>
+          </label>
+          <label>
+            <input type="radio" name="option" value="3" />
+            <span>Animais em Extinção</span>
+          </label>
+          <label>
+            <input type="radio" name="option" value="4" />
+            <span>Espécies de Peixes</span>
+          </label>
+          <label>
+            <input type="radio" name="option" value="5" />
+            <span>Gato Minhoso</span>
+          </label>
+          <label>
+            <input type="radio" name="option" value="6" />
+            <span>DivertidaMentes de uma Bailarina</span>
+          </label>
+          <label>
+            <input type="radio" name="option" value="7" />
+            <span>Espécies de Gatos</span>
+          </label>
+          <label>
+            <input type="radio" name="option" value="8" />
+            <span>Previsão do tempo no Litoral Leste, no Agreste e no Vale do Assú</span>
+          </label>
+          <label>
+            <input type="radio" name="option" value="9" />
+            <span>Lingua Brasileira de Sinais (Libras)</span>
+          </label>
+          <label>
+            <input type="radio" name="option" value="10" />
+            <span>Lei aprovada em SP</span>
+          </label>
+          <label>
+            <input type="radio" name="option" value="11" />
+            <span>Gravidez silenciosa</span>
+          </label>
+          <label>
+            <input type="radio" name="option" value="12" />
+            <span>O Pequeno Príncipe</span>
+          </label>
+          <label>
+            <input type="radio" name="option" value="13" />
+            <span>Porque você deveria adotar um animal</span>
+          </label>
+
+          <button type="submit">
+              <div class="svg-wrapper-1">
+                <div class="svg-wrapper">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24">
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path
+                      fill="currentColor"
+                      d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                  </svg>
+                </div>
+              </div>
+              <span>Enviar</span>
+          </button>
+
+          <!--
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              <ul class="flashes">
+              {% for message in messages %}
+                  <li>{{ message }}</li>
+              {% endfor %}
+              </ul>
+          {% endif %}
+          {% endwith %}
+          -->
+        </form>
+      </div>
+    </body>
+  </main>
 </html>
