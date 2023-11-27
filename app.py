@@ -15,6 +15,8 @@ def index():
 
 @app.route("/resultado")
 def resultado():
+    if count == 0:
+        return redirect("/")
     return render_template("resultado.html", votes = votes, count = count)
 
 @app.route("/voto", methods=["POST"])
