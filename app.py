@@ -26,7 +26,7 @@ count = 0
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", votes=votes)
 
 @app.route("/resultado")
 def resultado():
