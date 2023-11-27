@@ -41,9 +41,6 @@ def voto():
     if selection is None:
         flash("Selecione uma opção!")
         return redirect("/")
-    if selection not in votes:
-        flash("Selecione uma opção valida")
-        return redirect("/")
     votes[selection] += 1
     count += 1
     print(selection)
