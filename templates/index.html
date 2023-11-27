@@ -7,69 +7,18 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='index.css') }}" />
     <link rel="stylesheet" href="temp.css" />
-    <link rel="shortcut icon" href="{{ url_for('static', filename='img.ico') }}" type="image/x-icon">
     <title>Votação</title>
   </head>
   <main>
     <body>
       <div class="container">
         <form action="/voto" method="post">
-          <label>
-            <input type="radio" name="option" value="0" />
-            <span>O Mundo Sombrio de Sabrina</span>
-          </label>
-          <label>
-            <input type="radio" name="option" value="1" />
-            <span>O Mundo dos Animais</span>
-          </label>
-          <label>
-            <input type="radio" name="option" value="2" />
-            <span>Hidrate seu Pet</span>
-          </label>
-          <label>
-            <input type="radio" name="option" value="3" />
-            <span>Animais em Extinção</span>
-          </label>
-          <label>
-            <input type="radio" name="option" value="4" />
-            <span>Espécies de Peixes</span>
-          </label>
-          <label>
-            <input type="radio" name="option" value="5" />
-            <span>Gato Minhoso</span>
-          </label>
-          <label>
-            <input type="radio" name="option" value="6" />
-            <span>DivertidaMentes de uma Bailarina</span>
-          </label>
-          <label>
-            <input type="radio" name="option" value="7" />
-            <span>Espécies de Gatos</span>
-          </label>
-          <label>
-            <input type="radio" name="option" value="8" />
-            <span>Previsão do tempo no Litoral Leste, no Agreste e no Vale do Assú</span>
-          </label>
-          <label>
-            <input type="radio" name="option" value="9" />
-            <span>Lingua Brasileira de Sinais (Libras)</span>
-          </label>
-          <label>
-            <input type="radio" name="option" value="10" />
-            <span>Lei aprovada em SP</span>
-          </label>
-          <label>
-            <input type="radio" name="option" value="11" />
-            <span>Gravidez silenciosa</span>
-          </label>
-          <label>
-            <input type="radio" name="option" value="12" />
-            <span>O Pequeno Príncipe</span>
-          </label>
-          <label>
-            <input type="radio" name="option" value="13" />
-            <span>Porque você deveria adotar um animal</span>
-          </label>
+          {% for key, value in votes.items() %}
+            <label>
+              <input type="radio" name="option" value="{{ key }}" />
+              <span>{{ key }}</span>
+            </label>
+          {% endfor %}
 
           <button type="submit">
               <div class="svg-wrapper-1">
@@ -88,7 +37,6 @@
               </div>
               <span>Enviar</span>
           </button>
-          <a href="/resultado">Resultado</a>
 
           <!--
           {% with messages = get_flashed_messages() %}
@@ -101,6 +49,8 @@
           {% endif %}
           {% endwith %}
           -->
+
+          <a href="/resultado">Resutado</a>
         </form>
       </div>
     </body>
