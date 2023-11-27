@@ -1,0 +1,8 @@
+my-venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyc
+.pytest_cache/
+templates/temp.css
+templates/temp2.css
