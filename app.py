@@ -39,7 +39,7 @@ def voto():
     global count
     selection = request.form.get("option")
     if selection is None:
-        flash("Selecione uma opção")
+        flash("Selecione uma opção!")
         return redirect("/")
     if selection not in votes:
         flash("Selecione uma opção valida")
