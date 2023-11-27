@@ -6,7 +6,22 @@ app.secret_key = 'secretkey'
 # Configuração para servir arquivos estáticos
 app.config['STATIC_FOLDER'] = 'static'
 
-votes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+votes = {
+    "O Mundo Sombrio de Sabrina" : 0,
+    "O Mundo dos Animais" : 0,
+    "Hidrate seu Pet" : 0,
+    "Animais em Extinção" : 0,
+    "Espécies de Peixes" : 0,
+    "Gato Minhoso" : 0,
+    "DivertidaMentes de uma Bailarina" : 0,
+    "Espécies de Gatos" : 0,
+    "Previsão do tempo no Litoral Leste, no Agreste e no Vale do Assú" : 0,
+    "Lingua Brasileira de Sinais (Libras)" : 0,
+    "Lei aprovada em SP" : 0,
+    "Gravidez silenciosa" : 0,
+    "O Pequeno Príncipe" : 0,
+    "Porque você deveria adotar um animal" : 0,
+}
 count = 0
 
 @app.route("/")
@@ -26,7 +41,9 @@ def voto():
     if selection is None:
         flash("Selecione uma opção")
         return redirect("/")
-    selection = int(request.form.get("option"))
+    if selection not in votes:
+        flash("Selecione uma opção valida")
+        return redirect("/")
     votes[selection] += 1
     count += 1
     print(selection)
