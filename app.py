@@ -7,6 +7,7 @@ app.secret_key = 'secretkey'
 app.config['STATIC_FOLDER'] = 'static'
 
 votes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+count = 0
 
 @app.route("/")
 def index():
@@ -14,16 +15,18 @@ def index():
 
 @app.route("/resultado")
 def resultado():
-    return render_template("resultado.html", votes=votes)
+    return render_template("resultado.html", votes = votes, count = count)
 
 @app.route("/voto", methods=["POST"])
 def voto():
+    global count
     selection = request.form.get("option")
     if selection is None:
         flash("Selecione uma opção")
         return redirect("/")
     selection = int(request.form.get("option"))
     votes[selection] += 1
+    count += 1
     print(selection)
     print(votes)
     return redirect("/resultado") 
