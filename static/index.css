@@ -161,3 +161,18 @@ button.enviar {
 
 
 /* PDF */
+.pdfBtn {
+  cursor: pointer;
+  margin-left: auto;
+}
+.pdfBtn:hover .pdfImg {
+  content: url("../static/pdf-blue-hover.png");
+}
+
+
+iframe {
+  width: 90%;
+  height: 80vh;
+  margin-left: auto;
+  margin-right: auto;
+}

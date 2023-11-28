@@ -1,5 +1,9 @@
 function openPDF(documentName) {
+    var pdfViewer = document.getElementById("pdfModal");
     var pdfViewer = document.getElementById("pdfViewer");
+    var pdfDiv = document.querySelector(".pdfDiv");
+    $('#pdfModal').modal('show');
+    pdfDiv.style.display = "block";
     pdfViewer.style.display = "block";
     pdfViewer.src = getPDFPath(documentName);
     console.log("Abrindo " + getPDFPath(documentName));

@@ -99,7 +99,17 @@
                     src="../static/webcidada.jpeg"
                     width="250"
                     height="250"
-                    class="align-content-center" />
+                    class="align-content-center img-fluid" />
+
+                </div>
+                <div
+                  class="d-flex align-items-center justify-content-center opacity-100"">
+                  <img
+                    src="../static/logoUERN.jpg"
+                    width="400"
+                    height="300"
+                    class="align-content-center img-fluid" />
+
                 </div>
               </div>
             </div>
@@ -108,18 +118,44 @@
       </header>
     </div>
 
+    <div class="modal fade pdfDiv" id="pdfModal" tabindex="-1" role="dialog"
+      aria-labelledby="pdfModalLabel" aria-hidden="true" style="display:none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          {% for key, value in votes.items() %}
+          <div class="modal-header">
+            <h5 class="modal-title" id="meuModalLabel">{{ key }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+              aria-label="Fechar"></button>
+          </div>
+          {% endfor %}
+          
+          <div class="modal-body">
+            <iframe class="embed-responsive-item" id="pdfViewer"
+              style="display:none;"></iframe>
+          </div>
+
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-secondary"
+              data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container mt-5">
 
       <main>
         <div class="container-voto">
           <form action="/voto" method="post">
             {% for key, value in votes.items() %}
-              <label>
-                <input type="radio" name="option" value="{{ key }}" />
-                <span>{{ key }}</span>
-                <iframe id="pdfViewer" style="display:none;"></iframe>
-                <button class="pdfBtn" onclick="openPDF('{{ key }}')"><img class="pdfImg" src="../static/pdf-blue.png" height="30px"></button>
-              </label>
+            <label>
+              <input type="radio" name="option" value="{{ key }}" />
+              <span>{{ key }}</span>
+              <button type="button" class="pdfBtn"
+                onclick="openPDF('{{ key }}')"><img class="pdfImg"
+                  src="../static/pdf-blue.png" height="30px"></button>
+            </label>
             {% endfor %}
 
             <button type="submit" class="enviar">
@@ -144,50 +180,50 @@
         </div>
       </main>
 
-        <!-- Modal -->
-        <div class="modal fade" id="meuModal" tabindex="-1" role="dialog"
-          aria-labelledby="meuModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="meuModalLabel">
-                  {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                      {% for message in messages %}
-                        {{ message }}
-                      {% endfor %}
-                    {% endif %}
-                  {% endwith %}
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                  aria-label="Fechar"></button>
-              </div>
-              <div class="modal-body">
-                <p>Você não pode enviar um voto vazio. Selecione uma opção antes
-                  de enviar o seu voto.</p>
-              </div>
-              <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-secondary"
-                  data-bs-dismiss="modal">Fechar</button>
-              </div>
+      <!-- Modal -->
+      <div class="modal fade" id="meuModal" tabindex="-1" role="dialog"
+        aria-labelledby="meuModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="meuModalLabel">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+              <p>Você não pode enviar um voto vazio. Selecione uma opção antes
+                de enviar o seu voto.</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-secondary"
+                data-bs-dismiss="modal">Fechar</button>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- PDF READER -->
-      <script src="../static/pdf.js"></script>
+    <!-- PDF READER -->
+    <script src="../static/pdf.js"></script>
 
-      <!-- BOOTSTRAP -->
-      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous">
+    <!-- BOOTSTRAP -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous">
     </script>
 
-      <!-- Verificação vazio -->
-      <!--
+    <!-- Verificação vazio -->
+    
     {% with messages = get_flashed_messages() %}
       {% if messages %}
         <script>
@@ -198,7 +234,7 @@
         </script>
       {% endif %}
     {% endwith %}
-  -->
+  
 
   </body>
 </html>
