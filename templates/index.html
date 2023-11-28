@@ -118,7 +118,7 @@
                 <input type="radio" name="option" value="{{ key }}" />
                 <span>{{ key }}</span>
                 <iframe id="pdfViewer" style="display:none;"></iframe>
-                <button class="pdfBtn" onclick="openPDF('{{ key }}')"><img class="pdfImg" src="../static/pdf-blue.png" height="30px"></button>
+                <button type="button" class="pdfBtn" onclick="openPDF('{{ key }}')"><img class="pdfImg" src="../static/pdf-blue.png" height="30px"></button>
               </label>
             {% endfor %}
 
