@@ -117,8 +117,9 @@
             {% for key, value in votes.items() %}
               <label>
                 <input type="radio" name="option" value="{{ key }}" />
-                <span>{{ key }}<button class="pdfBtn" onclick="openPDF()"><img class="pdfImg" src="../static/pdf-blue.png" height="40px"></span></button>
+                <span>{{ key }}</span>
                 <iframe id="pdfViewer" style="display:none;"></iframe>
+                <button class="pdfBtn" onclick="openPDF()"><img class="pdfImg" src="../static/pdf-blue.png" height="40px"></button>
               </label>
             {% endfor %}
 
