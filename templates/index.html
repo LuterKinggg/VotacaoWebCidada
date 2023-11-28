@@ -141,7 +141,7 @@
       <main>
         <div class="container-voto">
           <form action="/voto" method="post">
-            {% for key, value in votes.items() %}
+            {% for key in votes.keys() %}
             <label>
               <input type="radio" name="option" value="{{ key }}" />
               <span>{{ key }}</span>
