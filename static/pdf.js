@@ -6,10 +6,14 @@ function openPDF(documentName) {
     pdfDiv.style.display = "block";
     pdfViewer.style.display = "block";
     pdfViewer.src = getPDFPath(documentName);
+
+    var modalTitle = document.getElementById("meuModalLabel");
+    modalTitle.textContent = documentName;
+
     console.log("Abrindo " + getPDFPath(documentName));
 }
 
-// Fechar o PDF se 
+// Fechar o PDF
 /*document.getElementById("pdfViewer").addEventListener("click", function() {
     this.style.display = "none";
 });*/

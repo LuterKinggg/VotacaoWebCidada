@@ -32,7 +32,7 @@
             width="66"
             height="70"
             class="bi me-2" />
-          <span class="fs-4">Webcidadã</span>
+          <span class="fs-4 menu-tittle">Webcidadã</span>
         </a>
 
         <ul class="nav nav-pills">
@@ -120,15 +120,13 @@
 
     <div class="modal fade pdfDiv" id="pdfModal" tabindex="-1" role="dialog"
       aria-labelledby="pdfModalLabel" aria-hidden="true" style="display:none;">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-xl">
         <div class="modal-content">
-          {% for key, value in votes.items() %}
           <div class="modal-header">
-            <h5 class="modal-title" id="meuModalLabel">{{ key }}</h5>
+            <h5 class="modal-title" id="meuModalLabel">{{ selectedDocumentTitle }}</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal"
               aria-label="Fechar"></button>
           </div>
-          {% endfor %}
           
           <div class="modal-body">
             <iframe class="embed-responsive-item" id="pdfViewer"

@@ -17,6 +17,10 @@ main {
   justify-content: center;
   margin-top: 3rem;
 }
+.menu-tittle {
+  font-weight: 500;
+}
+
 
 /* CONTAINER */
 .container-voto {
