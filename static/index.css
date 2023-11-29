@@ -168,9 +168,10 @@ button.enviar {
 .pdfBtn {
   cursor: pointer;
   margin-left: auto;
+  background: #fff;
 }
 .pdfBtn:hover .pdfImg {
-  content: url("../static/pdf-blue-hover.png");
+  content: url("../static/assets/pdf-blue-hover.png");
 }
 
 
