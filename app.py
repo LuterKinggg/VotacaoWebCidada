@@ -8,14 +8,13 @@ app.config['STATIC_FOLDER'] = 'static'
 
 votes = {
     "O Mundo Sombrio de Sabrina" : 0,
-    "O Mundo dos Animais" : 0,
     "Hidrate seu Pet" : 0,
     "Animais em Extinção" : 0,
     "Espécies de Peixes" : 0,
-    "Gato Minhoso" : 0,
+    "Gato Manhoso" : 0,
     "DivertidaMentes de uma Bailarina" : 0,
     "Espécies de Gatos" : 0,
-    "Previsão do tempo no Litoral Leste, no Agreste e no Vale do Assú" : 0,
+    "Previsão do tempo" : 0,
     "Lingua Brasileira de Sinais (Libras)" : 0,
     "Lei aprovada em SP" : 0,
     "Gravidez silenciosa" : 0,
@@ -45,5 +44,5 @@ def voto():
     votes[selection] += 1
     count += 1
     #print(selection)
-    #print(votes)
+    print(votes)
     return redirect("/resultado") 

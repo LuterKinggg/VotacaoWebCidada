@@ -21,14 +21,13 @@ function openPDF(documentName) {
 function getPDFPath(documentName) {
     var documentPaths = {
         "O Mundo Sombrio de Sabrina": "../static/docs/O Mundo Sombrio de Sabrina.pdf",
-        "O Mundo dos Animais": "../static/docs/O Mundo dos Animais.pdf",
         "Hidrate seu Pet": "../static/docs/Hidrate seu Pet.pdf",
         "Animais em Extinção": "../static/docs/Animais em Extinção.pdf",
         "Espécies de Peixes": "../static/docs/Espécies de Peixes.pdf",
-        "Gato Minhoso": "../static/docs/Gato Minhoso.pdf",
+        "Gato Manhoso": "../static/docs/Gato Manhoso.pdf",
         "DivertidaMentes de uma Bailarina": "../static/docs/DivertidaMentes de uma Bailarina.pdf",
         "Espécies de Gatos": "../static/docs/Espécies de Gatos.pdf",
-        "Previsão do tempo no Litoral Leste, no Agreste e no Vale do Assú": "../static/docs/Previsão do tempo no Litoral Leste, no Agreste e no Vale do Assú.pdf",
+        "Previsão do tempo": "../static/docs/Previsão do tempo.pdf",
         "Lingua Brasileira de Sinais (Libras)": "../static/docs/Lingua Brasileira de Sinais (Libras).pdf",
         "Lei aprovada em SP": "../static/docs/Lei aprovada em SP.pdf",
         "Gravidez silenciosa": "../static/docs/Gravidez silenciosa.pdf",
