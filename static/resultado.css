@@ -1,0 +1,30 @@
+/* Resetando tudo */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+  }
+  body {
+    background: linear-gradient(to bottom, white, rgb(64, 146, 239));
+    background-attachment: fixed;
+  }
+  main {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  .menu-tittle {
+    font-weight: 500;
+  }
+  /* CONTAINER */
+.container-res {
+    background: #fff;
+    position: relative;
+    width: 600px;
+    padding: 28px 32px;
+    border-radius: 18px;
+    font-family: "Roboto", sans-serif;
+    box-shadow: #00000086 0 5px 15px;
+  }
