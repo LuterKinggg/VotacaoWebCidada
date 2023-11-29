@@ -28,3 +28,8 @@
     font-family: "Roboto", sans-serif;
     box-shadow: #00000086 0 5px 15px;
   }
+  @media (max-width: 768px) {
+    .container-res {
+      margin-bottom: 3rem;
+    }
+}

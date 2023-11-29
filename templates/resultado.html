@@ -133,8 +133,37 @@
 
       <tbody>
         {% for key, value in sorted_items.items() %}
-        <tr>
-          <th class="pos" scope="row">{{ loop.index }}º</th>
+        <tr id="tr{{ loop.index }}">
+          <th class="pos" id="pos{{ loop.index }}" scope="row">{{ loop.index }}º</th>
+
+          <script>
+            var teste = document.querySelector("#pos{{ loop.index }}");
+            var tr = document.querySelector("#tr{{ loop.index }}");
+            for (i = '1'; i < '4'; i++) {
+              if ('{{ loop.index }}' == i) {
+                switch('{{ loop.index }}') {
+                  case '1':
+                    if ('{{ value }}' != '0') {
+                      tr.style.background = '#00b4d8';
+                    }
+                    break;
+                  case '2':
+                    if ('{{ value }}' != '0') {
+                      tr.style.background = '#90e0ef';
+                    }
+                    break;
+                  case '3':
+                    if ('{{ value }}' != '0') {
+                      tr.style.background = '#caf0f8';
+                    }
+                    break;
+                }
+                
+              }
+            }
+
+          </script>
+
           <td>{{ key }}</td>
           <td>{{ (value / count * 100)|round(2) }}%</td>
         </tr>
@@ -147,24 +176,7 @@
     </div>
     </main>
   </div>
-        
-  <!-- PEGA POSIÇÃO -->
-  <!--
-  {% for key, value in votes.items() %}
-  <script>
-    var elementosPos = document.querySelectorAll(".pos");
 
-    function pos(num) {
-      elementosPos.forEach(function(elemento) {
-          if (num != 0) {
-            elemento.textContent = num;
-          }
-      });
-    }
-    pos('{{ value }}');
-  </script>
-  {% endfor %}
--->
 
   <!-- BOOTSTRAP -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

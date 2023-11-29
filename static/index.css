@@ -181,3 +181,10 @@ iframe {
   margin-left: auto;
   margin-right: auto;
 }
+
+
+@media (max-width: 768px) {
+    .container-voto {
+      margin-bottom: 3rem;
+    }
+}
