@@ -30,9 +30,10 @@ def index():
 
 @app.route("/resultado")
 def resultado():
+    sorted_items = dict(sorted(votes.items(), key=lambda item: item[1], reverse=True))
     if count == 0:
-        return render_template("resultado.html", votes = votes, count = 1)
-    return render_template("resultado.html", votes = votes, count = count)
+        return render_template("resultado.html", sorted_items = sorted_items, count = 1, votes = votes)
+    return render_template("resultado.html", sorted_items=sorted_items, count=count, votes = votes)
 
 @app.route("/voto", methods=["POST"])
 def voto():
@@ -43,9 +44,6 @@ def voto():
         return redirect("/")
     votes[selection] += 1
     count += 1
-    print(selection)
-    print(votes)
+    #print(selection)
+    #print(votes)
     return redirect("/resultado") 
-
-if __name__ == "__main__":
-    app.run(debug=True)
