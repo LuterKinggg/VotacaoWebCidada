@@ -132,11 +132,11 @@
       </thead>
 
       <tbody>
-        {% for key, value in votes.items() %}
+        {% for key, value in sorted_items.items() %}
         <tr>
-          <th class="pos" scope="row"></th>
+          <th class="pos" scope="row">{{ loop.index }}º</th>
           <td>{{ key }}</td>
-          <td>{{ (value / count * 100)|round(2)}}%</td>
+          <td>{{ (value / count * 100)|round(2) }}%</td>
         </tr>
         {% endfor %}
       </tbody>
